@@ -1,112 +1,60 @@
 
 :root{
-  --bg-dark: #2C2622;       /* bois sombre */
-  --bg-light: #F5EFE9;      /* lin / beige clair */
-  --accent: #8B5E3C;        /* châtaigner */
-  --accent-2:#D9C2A7;       /* chêne clair */
-  --text:#2B2B2B;
-  --white:#fff;
-  --shadow: rgba(0,0,0,0.15);
+  --bg-dark:#2C2622; --bg-light:#F5EFE9; --accent:#8B5E3C; --accent2:#D9C2A7;
+  font-family:'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;  --text:#2B2B2B; --white:#fff; --shadow:rgba(0,0,0,.15);
+  color:var(--text); background:var(--bg-light);
+}
+
+/* Topbar */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:var(--bg-dark);color:var(--white)}
+.brand{color:var(--white);text-decoration:none;font-weight:700}
+.menu{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+.menu a{color:var(--white);text-decoration:none}
+
+/* Hero (dégradé par défaut; ajoutez une image si besoin) */
+.hero{
+  padding:48px 24px;
+  background: linear-gradient(180deg, #3b2f29 0%, #2e241f 100%);
+  color:var(--white);
+}
+.hero__content{max-width:900px;margin:0 auto}
+.hero h1{margin:0 0 8px;font-family:'Playfair Display', serif;font-size:2.2rem}
+.btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600;cursor:pointer}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-secondary{background:transparent;border:1px solid var(--accent);color:var(--accent)}
+
+/* Sections */
+.section{padding:32px 0}
+.section--light{background:var(--bg-light)}
+.container{width:min(1100px,92%);margin:0 auto}
+
+/* Cartes logements */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:16px}
+.card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 16px var(--shadow)}
+.card img{width:100%;height:200px;object-fit:cover}
+.card__content{padding:16px}
+.card h3{margin:4px 0 6px;font-family:'Playfair Display', serif}
+.tags{display:flex;gap:8px;list-style:none;margin:8px 0;padding:0}
+.tags li{background:var(--accent2);padding:6px 10px;border-radius:16px;color:#4a3b2b;font-size:.85rem}
+.card__actions{display:flex;gap:10px;margin-top:12px}
+
+/* Activités */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.activity{background:#fff;border-left:6px solid var(--accent);padding:12px;border-radius:10px;box-shadow:0 6px 12px var(--shadow)}
+
+/* Footer */
+.footer{background:var(--bg-dark);color:var(--white);padding:18px 0;margin-top:24px}
+.footer__grid{display:flex;justify-content:space-between;gap:8px}
+
+/* Modal Beds24 (si activée via JS) */
+.modal{position:fixed;inset:0;display:none}
+.modal.show{display:block}
+.modal__backdrop{position:absolute;inset:0;background:rgba(0,0,0,.5)}
+.modal__dialog{position:relative;z-index:2;width:min(1000px,92%);margin:5vh auto;background:#fff;border-radius:12px;box-shadow:0 20px 40px var(--shadow);overflow:hidden}
+.modal__close{position:absolute;top:8px;right:12px;background:transparent;border:none;font-size:28px;cursor:pointer}
+#bookingFrame{width:100%;height:80vh;border:none}
 }
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
-  font-family: 'Montserrat', sans-serif;
-  color: var(--text);
-  background: var(--bg-light);
-}
-
-/* Topbar */
-.topbar{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:14px 24px;background: var(--bg-dark);color: var(--white);
-  position:sticky;top:0;z-index:10;
-}
-.topbar--alt{position:static}
-.brand{
-  font-family:'Playfair Display', serif;font-weight:700;color: var(--white);
-  text-decoration:none;letter-spacing:.5px;
-}
-.menu{list-style:none;margin:0;padding:0;display:flex;gap:18px}
-.menu a{color: var(--white);text-decoration:none;opacity:.9}
-.menu a:hover{opacity:1}
-
-/* Hero */
-.hero{
-  background: url('../img/hero.jpg') center/cover no-repeat;
-  min-height: 60vh; color: var(--white); position: relative;
-}
-.hero::after{
-  content:'';position:absolute;inset:0;background:linear-gradient(
-    rgba(0,0,0,0.4), rgba(0,0,0,0.45)
-  );
-}
-.hero__content{
-  position:relative;z-index:1;max-width:900px;margin:0 auto;padding:80px 24px;text-align:center;
-}
-.hero h1{
-  font-family:'Playfair Display', serif;font-size:2.6rem;margin:0 0 12px;
-}
-.hero p{font-size:1.1rem;opacity:.95;margin:0 0 24px}
-
-/* Sections */
-.section{padding:48px 0}
-.section--light{background: var(--bg-light)}
-.container{width:min(1100px, 92%);margin:0 auto}
-
-/* Cards logements */
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:22px}
-.card{
-  background: var(--white);border-radius:12px;overflow:hidden;box-shadow:0 10px 20px var(--shadow);
-}
-.card img{width:100%;height:220px;object-fit:cover}
-.card__content{padding:18px}
-.card h3{font-family:'Playfair Display', serif;margin:0 0 8px}
-.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0 0 10px}
-.tags li{
-  background: var(--accent-2);color:#4a3b2b;border-radius:20px;padding:6px 10px;font-size:.85rem
-}
-.card__actions{display:flex;gap:10px;margin-top:12px}
-
-/* Listing page */
-.listing__header h1{font-family:'Playfair Display', serif;margin:8px 0}
-.gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0}
-.gallery img{width:100%;border-radius:10px;box-shadow:0 8px 16px var(--shadow)}
-.features{list-style:disc;margin:10px 0 0 20px}
-.cta{margin-top:20px}
-
-/* Boutons */
-.btn{
-  display:inline-block;padding:12px 16px;border-radius:8px;border:1px solid transparent;
-  text-decoration:none;font-weight:600;cursor:pointer;transition:.2s;
-}
-.btn-primary{background: var(--accent);color: var(--white)}
-.btn-primary:hover{filter:brightness(1.05)}
-.btn-secondary{background: transparent;border-color: var(--accent);color: var(--accent)}
-.btn-secondary:hover{background: var(--accent-2)}
-
-/* Activités */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:12px}
-.activity{
-  background: var(--white);border-left:6px solid var(--accent);
-  padding:14px;border-radius:10px;box-shadow:0 6px 12px var(--shadow)
-}
-.activity h3{margin:4px 0 8px;font-family:'Playfair Display', serif}
-
-/* Footer1 */
-.footer{background: var(--bg-dark);color: var(--white);padding:26px 0}
-.footer__grid{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
-
-/* Modal Beds24 */
-.modal{position:fixed;inset:0;display:none}
-.modal.show{display:block}
-.modal__backdrop{position:absolute;inset:0;background:rgba(0,0,0,.5)}
-.modal__dialog{
-  position:relative;z-index:2;width:min(1000px, 92%);margin:5vh auto;background: var(--white);
-  border-radius:12px;box-shadow:0 20px 40px var(--shadow);overflow:hidden
-}
-.modal__close{
-  position:absolute;top:8px;right:12px;background:transparent;border:none;font-size:28px;cursor:pointer
-}
-#bookingFrame{width:100%;height:80vh;border:none}
