@@ -10,43 +10,59 @@
 
 <body>
 
-<header class="hero">
+<!-- NAVIGATION -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">Gérardmer Locations</div>
+    <ul class="nav-links">
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#logements">Logements</a></li>
+      <li><a href="#activites">À proximité</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO / ACCUEIL -->
+<header id="accueil" class="hero">
   <div class="overlay">
     <h1>Locations de charme à Gérardmer</h1>
-    <p>Chalet & Maison – Ambiance cocooning au cœur des Vosges</p>
-    <a href="#logements" class="btn-primary">Découvrir nos logements</a>
+    <p>Chalet & Maison – Séjours cocooning au cœur des Vosges</p>
+    <a href="#logements" class="btn-primary">Voir les logements</a>
   </div>
 </header>
 
-<section id="accueil" class="section">
-  <h2>Bienvenue à Gérardmer</h2>
-  <p>
-    Profitez d’un séjour inoubliable à Gérardmer, entre lac et montagnes.
-    Nos logements allient confort premium, charme montagnard et tranquillité.
+<!-- SECTION PRÉSENTATION -->
+<section class="section">
+  <h2>Un séjour authentique à Gérardmer</h2>
+  <p style="text-align:center; max-width:800px; margin:auto;">
+    Entre lac et montagnes, nos logements vous offrent une expérience unique,
+    mêlant confort premium, charme montagnard et calme absolu.
+    Idéal pour se ressourcer en famille ou entre amis.
   </p>
 </section>
 
+<!-- LOGEMENTS -->
 <section id="logements" class="section section-light">
   <h2>Nos logements</h2>
 
   <div class="cards">
 
-    <!-- Chalet -->
+    <!-- CHALET -->
     <div class="card">
       <img src="images/chalet-exterieur.jpg" alt="Chalet à Gérardmer">
       <h3>Chalet cocooning</h3>
-      <p>👥 6 personnes</p>
+      <p>👥 Jusqu’à 6 personnes</p>
       <p>🏡 Type : Chalet</p>
-      <a href="#chalet" class="btn-secondary">Voir le logement</a>
+      <a href="#chalet" class="btn-secondary">Découvrir</a>
     </div>
 
-    <!-- Maison -->
+    <!-- MAISON -->
     <div class="card">
       <img src="images/maison-exterieur.jpg" alt="Maison à Gérardmer">
       <h3>Maison familiale</h3>
-      <p>👥 8 personnes</p>
+      <p>👥 Jusqu’à 8 personnes</p>
       <p>🏠 Type : Maison</p>
-      <a href="#maison" class="btn-secondary">Voir le logement</a>
+      <a href="#maison" class="btn-secondary">Découvrir</a>
     </div>
 
   </div>
@@ -63,17 +79,17 @@
   </div>
 
   <p>
-    Chalet tout confort avec ambiance bois, cheminée, terrasse et vue sur la nature.
-    Idéal pour un séjour détente en famille ou entre amis.
+    Chalet chaleureux avec décoration bois, ambiance cocooning,
+    terrasse privée et cadre naturel exceptionnel.
   </p>
 
-  <h3>Réserver</h3>
-  <!-- WIDGET BEDS24 CHALET -->
+  <h3>Disponibilités & réservation</h3>
   <iframe
     src="https://www.beds24.com/booking2.php?propid=XXXXXX"
     width="100%"
     height="600"
-    frameborder="0">
+    frameborder="0"
+    loading="lazy">
   </iframe>
 </section>
 
@@ -88,30 +104,31 @@
   </div>
 
   <p>
-    Maison spacieuse et lumineuse, parfaite pour accueillir jusqu’à 8 personnes,
-    proche du lac et des activités de Gérardmer.
+    Maison spacieuse et lumineuse, parfaite pour des vacances conviviales,
+    proche du lac et des activités principales de Gérardmer.
   </p>
 
-  <h3>Réserver</h3>
-  <!-- WIDGET BEDS24 MAISON -->
+  <h3>Disponibilités & réservation</h3>
   <iframe
     src="https://www.beds24.com/booking2.php?propid=YYYYYY"
     width="100%"
     height="600"
-    frameborder="0">
+    frameborder="0"
+    loading="lazy">
   </iframe>
 </section>
 
+<!-- ACTIVITÉS -->
 <section id="activites" class="section">
   <h2>À proximité</h2>
 
   <ul class="activities">
-    <li>🌲 Randonnées dans le Parc naturel des Vosges</li>
-    <li>🚣 Lac de Gérardmer (pédalo, baignade)</li>
-    <li>⛷️ Stations de ski (La Mauselaine)</li>
-    <li>🚴 VTT & vélo de montagne</li>
-    <li>🍽️ Restaurants et spécialités vosgiennes</li>
-    <li>🧖 Spa & bien-être</li>
+    <li>🌲 Randonnées et balades en forêt</li>
+    <li>🚣 Lac de Gérardmer (baignade, pédalo)</li>
+    <li>⛷️ Ski alpin et nordique (La Mauselaine)</li>
+    <li>🚴 VTT et vélo de montagne</li>
+    <li>🍽️ Restaurants & spécialités vosgiennes</li>
+    <li>🧖 Spas, bien-être et détente</li>
   </ul>
 </section>
 
