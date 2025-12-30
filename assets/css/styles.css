@@ -94,7 +94,7 @@ body{
 }
 .activity h3{margin:4px 0 8px;font-family:'Playfair Display', serif}
 
-/* Footer */
+/* Footer1 */
 .footer{background: var(--bg-dark);color: var(--white);padding:26px 0}
 .footer__grid{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
 
