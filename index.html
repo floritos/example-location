@@ -2,28 +2,65 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <!-- Encodage + viewport -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Locations Cocooning à Gérardmer – Chalets & Maisons</title>
-  <meta name="description" content="Locations saisonnières premium à Gérardmer, ambiance chalet, réservation en ligne via Beds24, activités à proximité.">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;600&display=swap" rell : chemin relatif depuis la racine du dépôt -->
+  <title>Gérardmer • Cocooning</title>
+  <meta name="description" content="Locations saisonnières premium à Gérardmer.">
+
+  <!-- ====== CSS embarqué de test (pour valider le rendu immédiatement) ====== -->
+  <style>
+    :root{
+      --bg-dark:#2C2622; --bg-light:#F5EFE9; --accent:#8B5E3C; --accent2:#D9C2A7;
+      --text:#2B2B2B; --white:#fff; --shadow:rgba(0,0,0,.15);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial;
+         color:var(--text);background:var(--bg-light)}
+    .topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;
+            background:var(--bg-dark);color:var(--white)}
+    .brand{color:var(--white);text-decoration:none;font-weight:700}
+    .menu{display:flex;gap:16px;list-style:none;margin:0;padding:0}
+    .menu a{color:var(--white);text-decoration:none}
+    .hero{padding:48px 24px;background:#3a2f28 url('assets/img/hero.jpg') center/cover no-repeat;color:var(--white)}
+    .hero h1{margin:0 0 8px;font-size:2rem}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
+    .btn-primary{background:var(--accent);color:#fff}
+    .section{padding:32px 0}
+    .section--light{background:var(--bg-light)}
+    .container{width:min(1100px,92%);margin:0 auto}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:16px}
+    .card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 16px var(--shadow)}
+    .card img{width:100%;height:200px;object-fit:cover}
+    .card__content{padding:16px}
+    .tags{display:flex;gap:8px;list-style:none;margin:8px 0;padding:0}
+    .tags li{background:var(--accent2);padding:6px 10px;border-radius:16px;color:#4a3b2b;font-size:.85rem}
+    .card__actions{display:flex;gap:10px;margin-top:12px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .activity{background:#fff;border-left:6px solid var(--accent);padding:12px;border-radius:10px;
+              box-shadow:0 6px 12px var(--shadow)}
+    .footer{background:var(--bg-dark);color:var(--white);padding:18px 0;margin-top:24px}
+    .footer__grid{display:flex;justify-content:space-between;gap:8px;width:min(1100px,92%);margin:0 auto}
+  </style>
+
+  <!-- ====== Lien EXTERNE vers ton CSS (à tester après avoir vu le rendu ci-dessus) ====== -->
+  <!-- IMPORTANT : guillemets droits " " et chevrons < > ; pas de slash initial -->
   assets/css/styles.css
 </head>
 <body>
   <header class="hero">
     <nav class="topbar">
-      <a class="brand"mer • Cocooning</a>
-      <ul class="menu">
+      <a class="brand" href="index.html" aria-label class="menu">
         <li>#accueilAccueil</a></li>
-        <li><aeservationsRéservations</a></li>
+        <li>#reservationsRéservations</a></li>
         <li>#proximiteÀ proximité</a></li>
       </ul>
     </nav>
     <div class="hero__content">
       <h1>Chalets & Maisons premium au cœur des Vosges</h1>
-      <p>Ambiance chaleureuse, bois & pierre, linge douillet, vue sur forêt.</p>
+      <p>Ambiance chaleureuse, bois & pierre, linge douillet, vue sur forêt – vivez Gérardmer autrement.</p>
       #reservationsVoir les logements</a>
     </div>
   </header>
@@ -41,24 +78,27 @@
         <h2>Réservations</h2>
         <div class="cards">
           <article class="card">
-            <imgts/img/chalet-cedre-1.jpg
+            assets/img/chalet-cedre-1.jpg
             <div class="card__content">
               <h3>Chalet du Cèdre</h3>
               <ul class="tags"><li>Chalet</li><li>4–6 pers.</li><li>Vue forêt</li></ul>
               <p>Poêle à granulés, terrasse, à 5 min du lac.</p>
               <div class="card__actions">
-                <a class="btn btn-secondary" href="logements           <button class="btn btn-primary" data-widget="https://VOTRE_URL_WIDGET_BEDS24_CHLET">Réserver</button>
+                logements/chalet-cedre.htmlDétails</a>
+                <button class="btn btn-primary" data-widget="https://VOTRE_URL_WIDGET_BEDS24_CHLET">Réserver</button>
               </div>
             </div>
           </article>
 
           <article class="card">
-            <img src="assets/img/maison-lisiere-1.jpg" alt="Maison de la Lisièret">
+            assets/img/maison-lisiere-1.jpg
+            <div class="card__content">
               <h3>Maison de la Lisière</h3>
               <ul class="tags"><li>Maison</li><li>6–8 pers.</li><li>Proche pistes</li></ul>
               <p>Grand séjour, cheminée, cuisine équipée, station à quelques minutes.</p>
               <div class="card__actions">
-                <a class="btn btn-secondary" href="logements             <button class="btn btn-primary" data-widget="https://VOTRE_URL_WIDGET_BEDS24_MAISON">Réserver</button>
+                logements/maison-lisiere.htmlDétails</a>
+                <button class="btn btn-primary" data-widget="https://VOTRE_URL_WIDGET_BEDS24_MAISON">Réserver</button>
               </div>
             </div>
           </article>
@@ -80,22 +120,15 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer__grid">
+    <div class="footer__grid">
       <p>© Gérardmer • Cocooning | Chalets & Maisons</p>
-      <p><small>Planning de réservation fourni par Beds24.</small></p>
+      <p><small>Planning de réservation Beds24.</small></p>
     </div>
   </footer>
 
-  <!-- Modal de réservation -->
+  <!-- Modal (si tu utilises le JS plus tard) -->
   <div id="bookingModal" class="modal" aria-hidden="true">
-    <div class="modal__dialog" role="dialog" aria-modal="true" aria-label="Calendrier de réservation">
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-label="Calendrier">
       <button class="modal__close" aria-label="Fermer">×</button>
-      <iframe id="bookingFrame" src="" title="Calendrier de réservation Beds24" loading="lazy"></iframe>
+      <iframe id="bookingFrame" src="" title="Calendrier Beds24" loading="lazy"></iframe>
     </div>
-    <div class="modal__backdrop"></div>
-  </div>
-
-  <!-- JS local -->
-  assets/js/main.js</script>
-</body>
-</html>
