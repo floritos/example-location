@@ -1,126 +1,123 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- Encodage + viewport -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Gérardmer • Cocooning</title>
-  <meta name="description" content="Locations saisonnières premium à Gérardmer, ambiance chalet, réservation en ligne via Beds24, activités à proximité.">
-
-  <!-- Google Fonts -->
-  https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;600&display=swap
-
-  <!-- CSS externe : chemin relatif depuis la racine du dépôt -->
-  assets/css/styles.css
+  <meta charset="UTF-8">
+  <title>Locations de charme à Gérardmer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Location saisonnière de charme à Gérardmer – Chalet et Maison premium">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <!-- Header / Hero -->
-  <header class="hero">
-    <nav class="topbar">
-      <adex.htmlGérardmer • Cocooning</a>
-      <ul class="menu">
-        <li><a href="#accil</a></li>
-        <li>#reservationsRéservations</a></li>
-        <li>#proximiteÀ proximité</a></li>
-      </ul>
-    </nav>
-    <div class="hero__content">
-      <h1>Chalets &amp; Maisons premium au cœur des Vosges</h1>
-      <p>Ambiance chaleureuse, bois &amp; pierre, linge douillet, vue sur forêt – vivez Gérardmer autrement.</p>
-      #reservationsVoir les logements</a>
+
+<header class="hero">
+  <div class="overlay">
+    <h1>Locations de charme à Gérardmer</h1>
+    <p>Chalet & Maison – Ambiance cocooning au cœur des Vosges</p>
+    <a href="#logements" class="btn-primary">Découvrir nos logements</a>
+  </div>
+</header>
+
+<section id="accueil" class="section">
+  <h2>Bienvenue à Gérardmer</h2>
+  <p>
+    Profitez d’un séjour inoubliable à Gérardmer, entre lac et montagnes.
+    Nos logements allient confort premium, charme montagnard et tranquillité.
+  </p>
+</section>
+
+<section id="logements" class="section section-light">
+  <h2>Nos logements</h2>
+
+  <div class="cards">
+
+    <!-- Chalet -->
+    <div class="card">
+      <img src="images/chalet-exterieur.jpg" alt="Chalet à Gérardmer">
+      <h3>Chalet cocooning</h3>
+      <p>👥 6 personnes</p>
+      <p>🏡 Type : Chalet</p>
+      <a href="#chalet" class="btn-secondary">Voir le logement</a>
     </div>
-  </header>
 
-  <main>
-    <!-- Accueil -->
-    <section id="accueil" class="section section--light">
-      <div class="container">
-        <h2>Bienvenue à Gérardmer</h2>
-        <p>
-          Nos hébergements offrent une expérience cocooning, idéale pour couples, familles et amis.
-          Réservez en quelques clics grâce à notre calendrier synchronisé (Airbnb &amp; Booking via Beds24).
-        </p>
-      </div>
-    </section>
-
-    <!-- Réservations : cartes logements -->
-    <section id="reservations" class="section">
-      <div class="container">
-        <h2>Réservations</h2>
-        <p>Choisissez votre logement, consultez les détails et réservez en ligne.</p>
-
-        <div class="cards">
-          <!-- Logement 1 -->
-          <article class="card">
-            <img src="assets/imgdre-1.jpg
-            <div class="card__content">
-              <h3>Chalet du Cèdre</h3>
-              <ul class="tags"><li>Chalet</li><li>4–6 pers.</li><li>Vue forêt</li></ul>
-              <p>Véritable cocon en bois, poêle à granulés, terrasse, à 5 min du lac.</p>
-              <div class="card__actions">
-                logements/chalet-cedre.htmlDétails</a>
-                <button class="btn btn-primary"
-                        data-widget="https://VOTRE_URL_WIDGET_BEDS24_CHLET"
-                        aria-label="Réserver Chalet du Cèdre">
-                  Réserver
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- Logement 2 -->
-          <article class="card">
-            <img src="assets/img/maison-lisiere-1.jpg" alt="Maison de la Lisièret">
-              <h3>Maison de la Lisière</h3>
-              <ul class="tags"><li>Maison</li><li>6–8 pers.</li><li>Proche pistes</li></ul>
-              <p>Grand séjour, cheminée, cuisine équipée, idéal familles, station à quelques minutes.</p>
-              <div class="card__actions">
-                logements/maison-lisiere.htmlDétails</a>
-                <button class="btn btn-primary"
-                        data-widget="https://VOTRE_URL_WIDGET_BEDS24_MAISON"
-                        aria-label="Réserver Maison de la Lisière">
-                  Réserver
-                </button>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- À proximité : activités -->
-    <section id="proximite" class="section section--light">
-      <div class="container">
-        <h2>À proximité – activités à Gérardmer</h2>
-        <div class="grid">
-          <div class="activity"><h3>Lac de Gérardmer</h3><p>Balade, paddle, pédalo, kayak.</p></div>
-          <div class="activity"><h3>Station La Mauselaine</h3><p>Ski alpin, luge, raquettes.</p></div>
-          <div class="activity"><h3>Belvédère de Mérelle</h3><p>Panorama sur le lac et la ville.</p></div>
-          <div class="activity"><h3>Cascades &amp; randonnées</h3><p>Tendon, Bas‑Rupts, route des crêtes.</p></div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer__grid">
-      <p>© Gérardmer • Cocooning | Chalets &amp; Maisons – Réservations en ligne</p>
-      <p><small>Le planning de réservation est fourni par Beds24.</small></p>
+    <!-- Maison -->
+    <div class="card">
+      <img src="images/maison-exterieur.jpg" alt="Maison à Gérardmer">
+      <h3>Maison familiale</h3>
+      <p>👥 8 personnes</p>
+      <p>🏠 Type : Maison</p>
+      <a href="#maison" class="btn-secondary">Voir le logement</a>
     </div>
-  </footer>
 
-  <!-- Modal de réservation (iframe Beds24) -->
-  <div id="bookingModal" class="modal" aria-hidden="true">
-    <div class="modal__dialog" role="dialog" aria-modal="true" aria-label="Calendrier de réservation">
-      <button class="modal__close" aria-label="Fermer">×</button>
-      <iframe id="bookingFrame" src="" title="Calendrier de réservation Beds24" loading="lazy"></iframe>
-    </div>
-    <div class="modal__backdrop"></div>
+  </div>
+</section>
+
+<!-- DÉTAIL CHALET -->
+<section id="chalet" class="section">
+  <h2>Chalet cocooning</h2>
+
+  <div class="gallery">
+    <img src="images/chalet-interieur1.jpg" alt="">
+    <img src="images/chalet-interieur1.jpg" alt="">
+    <img src="images/chalet-interieur1.jpg" alt="">
   </div>
 
-  <!-- JS local -->
-  assets/js/main.js</script>
+  <p>
+    Chalet tout confort avec ambiance bois, cheminée, terrasse et vue sur la nature.
+    Idéal pour un séjour détente en famille ou entre amis.
+  </p>
+
+  <h3>Réserver</h3>
+  <!-- WIDGET BEDS24 CHALET -->
+  <iframe
+    src="https://www.beds24.com/booking2.php?propid=XXXXXX"
+    width="100%"
+    height="600"
+    frameborder="0">
+  </iframe>
+</section>
+
+<!-- DÉTAIL MAISON -->
+<section id="maison" class="section section-light">
+  <h2>Maison familiale</h2>
+
+  <div class="gallery">
+    <img src="images/maison-interieur1.jpg" alt="">
+    <img src="images/maison-interieur1.jpg" alt="">
+    <img src="images/maison-interieur1.jpg" alt="">
+  </div>
+
+  <p>
+    Maison spacieuse et lumineuse, parfaite pour accueillir jusqu’à 8 personnes,
+    proche du lac et des activités de Gérardmer.
+  </p>
+
+  <h3>Réserver</h3>
+  <!-- WIDGET BEDS24 MAISON -->
+  <iframe
+    src="https://www.beds24.com/booking2.php?propid=YYYYYY"
+    width="100%"
+    height="600"
+    frameborder="0">
+  </iframe>
+</section>
+
+<section id="activites" class="section">
+  <h2>À proximité</h2>
+
+  <ul class="activities">
+    <li>🌲 Randonnées dans le Parc naturel des Vosges</li>
+    <li>🚣 Lac de Gérardmer (pédalo, baignade)</li>
+    <li>⛷️ Stations de ski (La Mauselaine)</li>
+    <li>🚴 VTT & vélo de montagne</li>
+    <li>🍽️ Restaurants et spécialités vosgiennes</li>
+    <li>🧖 Spa & bien-être</li>
+  </ul>
+</section>
+
+<footer>
+  <p>© 2025 – Locations de charme à Gérardmer</p>
+</footer>
+
 </body>
 </html>
