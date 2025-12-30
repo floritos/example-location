@@ -9,6 +9,7 @@
   --white: #ffffff;
 }
 
+/* RESET & STRUCTURE */
 * {
   margin: 0;
   padding: 0;
@@ -16,20 +17,22 @@
   font-family: "Segoe UI", "Helvetica Neue", sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
+html, body {
+  height: 100%;
 }
 
 body {
   background: var(--light);
   color: var(--dark);
   line-height: 1.6;
+
+  /* FOOTER STICKY */
   display: flex;
   flex-direction: column;
 }
 
 /* ================================
-   NAVBAR1
+   NAVBAR
 ================================ */
 .navbar {
   position: fixed;
@@ -265,6 +268,8 @@ footer {
   text-align: center;
   padding: 1.5rem;
   font-size: 0.9rem;
+
+  /* CLE DU FOOTER EN BAS */
   margin-top: auto;
 }
 
