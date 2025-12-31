@@ -23,12 +23,18 @@ main {
   flex: 1;
 }
 
+
 /* ================================
-   NAVBAR
+   NAVBAR (renommée pour éviter conflit Bootstrap)
 ================================ */
-.navbar {
+.site-navbar {
   background: linear-gradient(to right, #2b1e16, #3b2a20);
   padding: 1rem 2rem;
+
+  /* ✅ suit le scroll */
+  position: sticky;
+  top: 0;
+  z-index: 2000;  /* au-dessus du carousel */
 }
 
 .nav-container {
@@ -49,6 +55,8 @@ main {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  margin: 0;
+  padding: 0; /* important pour être identique partout */
 }
 
 .nav-links a {
@@ -60,6 +68,7 @@ main {
 .nav-links a:hover {
   text-decoration: underline;
 }
+
 
 /* ================================
    HERO
