@@ -215,8 +215,9 @@ footer{
 }
 
 
+
 /* ================================
-   CAROUSEL (PC stable + Mobile responsive sans vide)
+   CAROUSEL (anti-zoom + responsive)
 ================================ */
 
 .carousel{
@@ -224,7 +225,7 @@ footer{
   margin: 0 auto;
 }
 
-/* ✅ PC : hauteur fixe (anti "zoom" pendant transition) */
+/* ✅ Hauteur fixe par défaut (PC) = anti "zoom" */
 .carousel .carousel-inner{
   height: 520px;
   overflow: hidden;
@@ -232,24 +233,43 @@ footer{
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* ✅ Mobile : hauteur adaptable (plus de vide) */
-@media (max-width: 768px){
+/* ✅ Tablette */
+@media (max-width: 992px){
   .carousel .carousel-inner{
-    height: auto;              /* on enlève la hauteur fixe */
-    aspect-ratio: 16 / 9;      /* le conteneur devient responsive */
+    height: 420px;
   }
 }
 
-/* Les items remplissent le conteneur */
+/* ✅ Mobile */
+@media (max-width: 768px){
+  .carousel .carousel-inner{
+    height: 320px;
+  }
+}
+
+/* ✅ Très petit mobile */
+@media (max-width: 420px){
+  .carousel .carousel-inner{
+    height: 260px;
+  }
+}
+
+/* Les items + images remplissent TOUJOURS la hauteur (donc zéro “vide”) */
 .carousel .carousel-item{
   height: 100%;
 }
 
-/* L'image remplit le conteneur (aucun espace vide) */
 .carousel-img{
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
+
+/* Optionnel : éviter un effet visuel au focus des flèches */
+.carousel-control-prev:focus,
+.carousel-control-next:focus{
+  box-shadow: none !important;
+}
+
 
