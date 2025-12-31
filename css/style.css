@@ -225,11 +225,15 @@ footer {
 .carousel .carousel-inner {
   aspect-ratio: 16 / 9;   /* change si tu veux (4/3, 3/2, etc.) */
   background: #000;       /* évite les flashs pendant transition */
+  overflow: hidden;
 }
 
 /* Tous les items prennent la hauteur du carousel-inner */
 .carousel .carousel-item {
   height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
 /* L’image remplit la zone, sans provoquer de variation */
@@ -238,10 +242,13 @@ footer {
   height: 100%;
   object-fit: cover;
   display: block;         /* supprime les petits écarts inline */
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 /* Au cas où une transition globale s'applique aux images */
 .carousel img {
   transition: none !important;
-  transform: none !important;
 }
+
