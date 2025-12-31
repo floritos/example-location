@@ -252,3 +252,8 @@ footer {
   transition: none !important;
 }
 
+.carousel.carousel-fade .carousel-item {
+  transition: opacity .35s ease-in-out;
+}
+
+
