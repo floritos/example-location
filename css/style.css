@@ -1,53 +1,49 @@
+
 /* ================================
    RESET & BASE
 ================================ */
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Empêche le "zoom" : garde l'espace scrollbar stable sur PC */
-
-html {
-  overflow-x: hidden;                 /* sécurité anti-scroll horizontal */
+/* ✅ Windows + Chrome : largeur stable (scrollbar toujours présente) */
+html{
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
-
-
-html, body {
-  height: 100%;
-}
-
-body {
+body{
+  margin: 0;
+  min-height: 100vh;                 /* ✅ remplace height:100% */
   font-family: "Segoe UI", sans-serif;
   background-color: #f7f3ef;
   color: #3a2a1f;
+
   display: flex;
   flex-direction: column;
+
   overflow-x: hidden;
-  padding-right: calc(100vw - 100%);
 }
 
-main {
-  flex: 1;
+main{
+  flex: 1 0 auto;                    /* ✅ plus stable que flex:1 seul */
 }
-
 
 /* ================================
    NAVBAR (renommée pour éviter conflit Bootstrap)
 ================================ */
-.site-navbar {
+.site-navbar{
   background: linear-gradient(to right, #2b1e16, #3b2a20);
   padding: 1rem 2rem;
 
-  /* ✅ suit le scroll */
   position: sticky;
   top: 0;
-  z-index: 2000;  /* au-dessus du carousel */
+  z-index: 2000;
 }
 
-.nav-container {
+.nav-container{
   max-width: 1200px;
   margin: auto;
   display: flex;
@@ -55,41 +51,40 @@ main {
   align-items: center;
 }
 
-.logo {
+.logo{
   color: white;
   font-weight: 600;
   font-size: 1.1rem;
 }
 
-.nav-links {
+.nav-links{
   list-style: none;
   display: flex;
   gap: 1.5rem;
   margin: 0;
-  padding: 0; /* important pour être identique partout */
+  padding: 0;
 }
 
-.nav-links a {
+.nav-links a{
   color: white;
   text-decoration: none;
   font-weight: 500;
 }
 
-.nav-links a:hover {
+.nav-links a:hover{
   text-decoration: underline;
 }
-
 
 /* ================================
    HERO
 ================================ */
-.hero {
+.hero{
   height: 70vh;
   background: url("../img/Designer.png") center/cover no-repeat;
   position: relative;
 }
 
-.overlay {
+.overlay{
   background: rgba(0,0,0,0.55);
   color: white;
   height: 100%;
@@ -101,17 +96,17 @@ main {
   padding: 2rem;
 }
 
-.overlay h1 {
+.overlay h1{
   font-size: 2.4rem;
   margin-bottom: 1rem;
 }
 
-.overlay p {
+.overlay p{
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
 }
 
-.btn-primary {
+.btn-primary{
   background: #7a4b35;
   color: white;
   padding: 0.8rem 2rem;
@@ -119,20 +114,20 @@ main {
   text-decoration: none;
 }
 
-.btn-primary:hover {
+.btn-primary:hover{
   background: #9a6245;
 }
 
 /* ================================
    SECTIONS
 ================================ */
-.section {
+.section{
   max-width: 1200px;
   margin: 4rem auto;
   padding: 0 1.5rem;
 }
 
-.section h2 {
+.section h2{
   text-align: center;
   margin-bottom: 2rem;
   color: #6b3e26;
@@ -141,13 +136,13 @@ main {
 /* ================================
    LOGEMENTS - CARDS
 ================================ */
-.cards {
+.cards{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
-.card {
+.card{
   background: #fffaf5;
   border-radius: 20px;
   overflow: hidden;
@@ -155,30 +150,31 @@ main {
   transition: transform 0.3s;
 }
 
-.card:hover {
+.card:hover{
   transform: translateY(-5px);
 }
 
-.card img {
+.card img{
   width: 100%;
   height: 260px;
   object-fit: cover;
+  display: block;
 }
 
-.card-content {
+.card-content{
   padding: 1.5rem;
   text-align: center;
 }
 
-.card-content h3 {
+.card-content h3{
   margin-bottom: 0.5rem;
 }
 
-.card-content p {
+.card-content p{
   font-size: 0.95rem;
 }
 
-.btn {
+.btn{
   display: inline-block;
   margin-top: 1rem;
   padding: 0.6rem 1.6rem;
@@ -188,15 +184,14 @@ main {
   text-decoration: none;
 }
 
-.btn:hover {
+.btn:hover{
   background: #7a4b35;
 }
-
 
 /* ================================
    FOOTER
 ================================ */
-footer {
+footer{
   background: linear-gradient(to right, #2b1e16, #3b2a20);
   color: white;
   text-align: center;
@@ -207,91 +202,53 @@ footer {
 /* ================================
    RESPONSIVE
 ================================ */
-@media (max-width: 900px) {
-  .cards {
+@media (max-width: 900px){
+  .cards{
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 768px) {
-  .nav-container {
+@media (max-width: 768px){
+  .nav-container{
     flex-direction: column;
     gap: 1rem;
   }
 
-  .hero {
+  .hero{
     height: 60vh;
   }
 
-  .overlay h1 {
+  .overlay h1{
     font-size: 1.9rem;
   }
 }
+
 /* ================================
-   FIX CAROUSEL : supprime l'effet zoom/jump
+   CAROUSEL (stable, sans hacks GPU)
 ================================ */
 
-.carousel {
+/* centre et limite la largeur */
+.carousel{
   width: min(900px, 100%);
+  margin: 0 auto;
 }
 
-/* Réserve une zone stable pour éviter le recalcul pendant la transition */
-.carousel .carousel-inner {
-  aspect-ratio: 16 / 9;   /* change si tu veux (4/3, 3/2, etc.) */
-  background: #000;       /* évite les flashs pendant transition */
+/* réserve une zone fixe -> pas de resize/reflow */
+.carousel .carousel-inner{
+  aspect-ratio: 16 / 9;
+  background: #000;
   overflow: hidden;
 }
 
-/* Tous les items prennent la hauteur du carousel-inner */
-.carousel .carousel-item {
+/* les items remplissent la zone */
+.carousel .carousel-item{
   height: 100%;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  transform-style: preserve-3d;
 }
 
-/* L’image remplit la zone, sans provoquer de variation */
-.carousel .carousel-item img {
+/* image stable */
+.carousel .carousel-item img{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;         /* supprime les petits écarts inline */
-  will-change: transform;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
+  display: block;
 }
-
-/* Au cas où une transition globale s'applique aux images */
-.carousel img {
-  transition: none !important;
-}
-
-.carousel.carousel-fade .carousel-item {
-  transition: opacity .35s ease-in-out;
-}
-
-/* ================================
-   FIX PC : supprimer le zoom temporaire au clic (compositing GPU)
-   (override final)
-================================ */
-
-/* On neutralise les hacks 3D/GPU qui déclenchent le resampling */
-.carousel .carousel-item {
-  transform-style: flat !important;
-  backface-visibility: visible !important;
-  -webkit-backface-visibility: visible !important;
-}
-
-.carousel .carousel-item img {
-  will-change: auto !important;
-  transform: none !important;
-  -webkit-transform: none !important;
-}
-
-/* On stabilise la peinture (évite les repaints qui “scalent”) */
-.carousel .carousel-inner {
-  contain: paint;
-}
-
-
-
