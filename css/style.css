@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+/* Empêche le "zoom" : garde l'espace scrollbar stable sur PC */
+html {
+  scrollbar-gutter: stable;
+}
+
 html, body {
   height: 100%;
 }
@@ -17,6 +22,8 @@ body {
   color: #3a2a1f;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
+
 }
 
 main {
