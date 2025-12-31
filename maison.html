@@ -3,62 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <title>Maison familiale – Gérardmer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-<nav class="navbar">
-  <div class="nav-container">
-    <div class="logo">Gérardmer Locations</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="logements.html">Logements</a></li>
-      <li><a href="proximite.html">À proximité</a></li>
-    </ul>
-  </div>
-</nav>
+<header>
+  <nav class="navbar">
+    <strong>Gérardmer Locations</strong>
+    <div>
+      <a href="index.html">Accueil</a>
+      <a href="logements.html">Logements</a>
+      <a href="proximite.html">À proximité</a>
+    </div>
+  </nav>
+</header>
 
-<section class="section" style="margin-top:70px;">
+<main>
+<section>
   <h2>Maison familiale</h2>
 
+  <!-- GALERIE -->
   <div class="gallery">
-    <img src="img/Designer.png" alt="">
-    <img src="img/Designer.png" alt="">
-    <img src="img/Designer.png" alt="">
+    <div class="gallery-main" onclick="openCarousel(0)">
+      <img src="img/Designer.png" alt="Maison Gérardmer">
+    </div>
+    <div class="gallery-side">
+      <img src="img/Designer.png" onclick="openCarousel(1)">
+      <img src="img/Designer.png" onclick="openCarousel(2)">
+    </div>
   </div>
 
-  <p>
-    Maison spacieuse et lumineuse, parfaite pour les familles ou groupes,
-    proche du lac de Gérardmer et des activités principales.
-  </p>
-
-  <ul class="activities">
-    <li>👥 Capacité : 8 personnes</li>
-    <li>🛏️ 4 chambres</li>
-    <li>🌞 Jardin & terrasse</li>
-    <li>🚶 Proche du lac</li>
+  <!-- INFOS -->
+  <h3>Informations générales</h3>
+  <ul>
+    <li>👥 Capacité : jusqu’à 8 personnes</li>
+    <li>🛏️ Chambres : 4</li>
+    <li>🛁 Salles de bain : 2</li>
+    <li>🍽️ Cuisine entièrement équipée</li>
+    <li>🌳 Jardin privé</li>
+    <li>🚗 Garage + parking</li>
+    <li>📍 Gérardmer – Vosges</li>
   </ul>
 
-  <h3 style="text-align:center; margin-top:2rem;">
-    Vérifier les disponibilités
-  </h3>
+  <p>
+    Grande maison confortable, idéale pour les familles ou groupes souhaitant
+    profiter de Gérardmer été comme hiver.
+  </p>
 
-  <form class="booking-form">
-    <label>Date d’arrivée
-      <input type="date" required>
+  <!-- PLANNING -->
+  <h3>Disponibilités</h3>
+  <div class="planning">
+    <label>
+      Date d’arrivée :
+      <input type="date">
     </label>
-    <label>Date de départ
-      <input type="date" required>
-    </label>
-    <button class="btn-primary">Vérifier la disponibilité</button>
-  </form>
 
+    <label>
+      Date de départ :
+      <input type="date">
+    </label>
+
+    <br><br>
+    <a href="#" class="btn">Réserver</a>
+  </div>
 </section>
+</main>
+
+<!-- CARROUSEL -->
+<div id="carouselModal" class="carousel-modal">
+  <span class="close" onclick="closeCarousel()">×</span>
+  <img id="carouselImage">
+  <button class="prev" onclick="changeImage(-1)">‹</button>
+  <button class="next" onclick="changeImage(1)">›</button>
+</div>
+
+<script>
+  const images = [
+    "img/Designer.png",
+    "img/Designer.png",
+    "img/Designer.png"
+  ];
+  let currentIndex = 0;
+
+  function openCarousel(i) {
+    currentIndex = i;
+    document.getElementById("carouselImage").src = images[i];
+    document.getElementById("carouselModal").style.display = "flex";
+  }
+
+  function closeCarousel() {
+    document.getElementById("carouselModal").style.display = "none";
+  }
+
+  function changeImage(dir) {
+    currentIndex = (currentIndex + dir + images.length) % images.length;
+    document.getElementById("carouselImage").src = images[currentIndex];
+  }
+</script>
 
 <footer>
-  <p>© 2025 – Locations de charme à Gérardmer</p>
+  © 2025 – Locations de charme à Gérardmer
 </footer>
 
 </body>
