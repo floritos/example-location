@@ -270,4 +270,28 @@ footer {
   transition: opacity .35s ease-in-out;
 }
 
+/* ================================
+   FIX PC : supprimer le zoom temporaire au clic (compositing GPU)
+   (override final)
+================================ */
+
+/* On neutralise les hacks 3D/GPU qui déclenchent le resampling */
+.carousel .carousel-item {
+  transform-style: flat !important;
+  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible !important;
+}
+
+.carousel .carousel-item img {
+  will-change: auto !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+}
+
+/* On stabilise la peinture (évite les repaints qui “scalent”) */
+.carousel .carousel-inner {
+  contain: paint;
+}
+
+
 
