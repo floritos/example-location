@@ -214,32 +214,38 @@ footer{
   .overlay h1{ font-size: 1.9rem; }
 }
 
+
 /* ================================
-   CAROUSEL (FIX "ZOOM" Windows/Chrome)
+   CAROUSEL (PC stable + Mobile responsive sans vide)
 ================================ */
 
-/* centre le carousel */
 .carousel{
   max-width: 900px;
   margin: 0 auto;
 }
 
-/* ✅ Hauteur fixe sur PC : plus de recalcul pendant transition */
+/* ✅ PC : hauteur fixe (anti "zoom" pendant transition) */
 .carousel .carousel-inner{
-  height: 520px;                 /* = ta valeur max-height */
+  height: 520px;
   overflow: hidden;
-  border-radius: 1rem;           /* équivalent rounded-4 */
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* équivalent shadow */
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* Mobile : hauteur plus petite */
+/* ✅ Mobile : hauteur adaptable (plus de vide) */
 @media (max-width: 768px){
   .carousel .carousel-inner{
-    height: 320px;
+    height: auto;              /* on enlève la hauteur fixe */
+    aspect-ratio: 16 / 9;      /* le conteneur devient responsive */
   }
 }
 
-/* L'image remplit la zone */
+/* Les items remplissent le conteneur */
+.carousel .carousel-item{
+  height: 100%;
+}
+
+/* L'image remplit le conteneur (aucun espace vide) */
 .carousel-img{
   width: 100%;
   height: 100%;
@@ -247,8 +253,3 @@ footer{
   display: block;
 }
 
-/* Optionnel : supprime le focus ring Bootstrap sur les flèches (visuel) */
-.carousel-control-prev:focus,
-.carousel-control-next:focus{
-  box-shadow: none !important;
-}
