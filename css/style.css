@@ -8,9 +8,14 @@
 }
 
 /* Empêche le "zoom" : garde l'espace scrollbar stable sur PC */
+
 html {
-  scrollbar-gutter: stable;
+  overflow-y: scroll;                
+  scrollbar-gutter: stable both-edges;
+  overflow-x: hidden;                 /* sécurité anti-scroll horizontal */
 }
+
+
 
 html, body {
   height: 100%;
@@ -22,8 +27,7 @@ body {
   color: #3a2a1f;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
-
+  overflow-x: hidden;
 }
 
 main {
