@@ -182,6 +182,37 @@ main {
   background: #7a4b35;
 }
 
+
+/* ================================
+   FIX CAROUSEL : supprime l'effet zoom/jump
+================================ */
+
+/* Réserve une zone stable pour éviter le recalcul pendant la transition */
+.carousel .carousel-inner {
+  aspect-ratio: 16 / 9;   /* change si tu veux (4/3, 3/2, etc.) */
+  background: #000;       /* évite les flashs pendant transition */
+}
+
+/* Tous les items prennent la hauteur du carousel-inner */
+.carousel .carousel-item {
+  height: 100%;
+}
+
+/* L’image remplit la zone, sans provoquer de variation */
+.carousel .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;         /* supprime les petits écarts inline */
+}
+
+/* Au cas où une transition globale s'applique aux images */
+.carousel img {
+  transition: none !important;
+  transform: none !important;
+}
+
+
 /* ================================
    FOOTER
 ================================ */
