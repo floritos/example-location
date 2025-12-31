@@ -228,6 +228,10 @@ footer {
    FIX CAROUSEL : supprime l'effet zoom/jump
 ================================ */
 
+.carousel {
+  width: min(900px, 100%);
+}
+
 /* Réserve une zone stable pour éviter le recalcul pendant la transition */
 .carousel .carousel-inner {
   aspect-ratio: 16 / 9;   /* change si tu veux (4/3, 3/2, etc.) */
