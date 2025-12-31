@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Chalet cocooning</title>
+  <title>Chalet cocooning – Gérardmer</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -22,22 +22,54 @@
 <section>
   <h2>Chalet cocooning</h2>
 
+  <!-- GALERIE -->
   <div class="gallery">
     <div class="gallery-main" onclick="openCarousel(0)">
-      <img src="img/Designer.png" alt="">
+      <img src="img/Designer.png" alt="Chalet Gérardmer">
     </div>
-
     <div class="gallery-side">
       <img src="img/Designer.png" onclick="openCarousel(1)">
       <img src="img/Designer.png" onclick="openCarousel(2)">
     </div>
   </div>
 
-  <p>Chalet chaleureux au cœur des Vosges, idéal pour un séjour cocooning à Gérardmer.</p>
+  <!-- INFOS -->
+  <h3>Informations générales</h3>
+  <ul>
+    <li>👥 Capacité : jusqu’à 6 personnes</li>
+    <li>🛏️ Chambres : 3</li>
+    <li>🛁 Salle de bain : 1</li>
+    <li>🔥 Poêle à bois</li>
+    <li>🌲 Terrasse avec vue forêt</li>
+    <li>🚗 Parking privé</li>
+    <li>📍 Gérardmer – Vosges</li>
+  </ul>
+
+  <p>
+    Chalet chaleureux et entièrement équipé, idéal pour un séjour cocooning
+    en couple, en famille ou entre amis au cœur des Vosges.
+  </p>
+
+  <!-- PLANNING -->
+  <h3>Disponibilités</h3>
+  <div class="planning">
+    <label>
+      Date d’arrivée :
+      <input type="date">
+    </label>
+
+    <label>
+      Date de départ :
+      <input type="date">
+    </label>
+
+    <br><br>
+    <a href="#" class="btn">Réserver</a>
+  </div>
 </section>
 </main>
 
-<!-- MODAL -->
+<!-- CARROUSEL -->
 <div id="carouselModal" class="carousel-modal">
   <span class="close" onclick="closeCarousel()">×</span>
   <img id="carouselImage">
