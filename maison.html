@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Maison familiale – Gérardmer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<header>
-  <nav class="navbar">
-    <strong>Gérardmer Locations</strong>
-    <div>
-      <a href="index.html">Accueil</a>
-      <a href="logements.html">Logements</a>
-      <a href="proximite.html">À proximité</a>
-    </div>
-  </nav>
-</header>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">Gérardmer Locations</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="logements.html">Logements</a></li>
+      <li><a href="proximite.html">À proximité</a></li>
+    </ul>
+  </div>
+</nav>
 
-<main>
-<section>
+<main class="section">
   <h2>Maison familiale</h2>
 
-  <!-- GALERIE -->
   <div class="gallery">
     <div class="gallery-main" onclick="openCarousel(0)">
       <img src="img/Designer.png" alt="Maison Gérardmer">
@@ -33,46 +33,37 @@
     </div>
   </div>
 
-  <!-- INFOS -->
-  <h3>Informations générales</h3>
+  <h3>Informations</h3>
   <ul>
-    <li>👥 Capacité : jusqu’à 8 personnes</li>
-    <li>🛏️ Chambres : 4</li>
-    <li>🛁 Salles de bain : 2</li>
-    <li>🍽️ Cuisine entièrement équipée</li>
+    <li>👥 Jusqu’à 8 personnes</li>
+    <li>🛏️ 4 chambres</li>
+    <li>🛁 2 salles de bain</li>
+    <li>🍽️ Cuisine équipée</li>
     <li>🌳 Jardin privé</li>
     <li>🚗 Garage + parking</li>
-    <li>📍 Gérardmer – Vosges</li>
   </ul>
 
   <p>
-    Grande maison confortable, idéale pour les familles ou groupes souhaitant
-    profiter de Gérardmer été comme hiver.
+    Maison spacieuse et confortable, idéale pour les familles ou groupes
+    souhaitant découvrir Gérardmer et ses environs.
   </p>
 
-  <!-- PLANNING -->
   <h3>Disponibilités</h3>
   <div class="planning">
-    <label>
-      Date d’arrivée :
+    <label>Arrivée :
       <input type="date">
     </label>
-
-    <label>
-      Date de départ :
+    <label>Départ :
       <input type="date">
     </label>
-
     <br><br>
     <a href="#" class="btn">Réserver</a>
   </div>
-</section>
 </main>
 
-<!-- CARROUSEL -->
 <div id="carouselModal" class="carousel-modal">
   <span class="close" onclick="closeCarousel()">×</span>
-  <img id="carouselImage">
+  <img id="carouselImage" alt="">
   <button class="prev" onclick="changeImage(-1)">‹</button>
   <button class="next" onclick="changeImage(1)">›</button>
 </div>
@@ -85,9 +76,9 @@
   ];
   let currentIndex = 0;
 
-  function openCarousel(i) {
-    currentIndex = i;
-    document.getElementById("carouselImage").src = images[i];
+  function openCarousel(index) {
+    currentIndex = index;
+    document.getElementById("carouselImage").src = images[index];
     document.getElementById("carouselModal").style.display = "flex";
   }
 
@@ -95,8 +86,8 @@
     document.getElementById("carouselModal").style.display = "none";
   }
 
-  function changeImage(dir) {
-    currentIndex = (currentIndex + dir + images.length) % images.length;
+  function changeImage(direction) {
+    currentIndex = (currentIndex + direction + images.length) % images.length;
     document.getElementById("carouselImage").src = images[currentIndex];
   }
 </script>
