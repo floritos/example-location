@@ -10,8 +10,6 @@
 /* Empêche le "zoom" : garde l'espace scrollbar stable sur PC */
 
 html {
-  overflow-y: scroll;                
-  scrollbar-gutter: stable both-edges;
   overflow-x: hidden;                 /* sécurité anti-scroll horizontal */
 }
 
@@ -28,6 +26,7 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  padding-right: calc(100vw - 100%);
 }
 
 main {
