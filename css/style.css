@@ -32,11 +32,17 @@ main{
 /* ================================
    NAVBAR
 ================================ */
+
 .site-navbar{
   background: linear-gradient(to right, #2b1e16, #3b2a20);
   padding: 1rem 2rem;
-  position: sticky;
+
+  position: fixed;   /* ✅ fixed */
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
   z-index: 2000;
 }
 
