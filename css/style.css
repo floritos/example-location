@@ -226,14 +226,12 @@ footer{
 /* ================================
  BOUTON RETOUR (tout dans .back-under-nav)
 ================================ */
-/* Bande discrète sous la navbar */
 .back-under-nav{
   max-width: 1200px;
   margin: 0 auto;
   padding: .35rem 1.5rem 0;
 }
 
-/* Le lien devient le "bouton" */
 .back-under-nav a{
   display: inline-flex;
   align-items: center;
@@ -247,12 +245,10 @@ footer{
   color: #3a2a1f;
 }
 
-/* ✅ empêche le violet des liens visités */
 .back-under-nav a:visited{
   color: #3a2a1f;
 }
 
-/* Hover discret */
 .back-under-nav a:hover{
   background: rgba(58,42,31,0.06);
 }
@@ -260,10 +256,8 @@ footer{
 /* ================================
  GALLERY CAROUSEL
 ================================ */
-/* ===== Galerie cliquable (sur la page) ===== */
 .gallery-carousel .gallery-open { display:block; }
 
-/* ===== Modal plein écran style sombre + accent marron ===== */
 .gallery-modal .modal-content{
   background: #0b0b0b;
   color: #fff;
@@ -306,7 +300,6 @@ footer{
   background: #0b0b0b;
 }
 
-/* Bande miniatures */
 .gallery-thumbs{
   display: flex;
   gap: .5rem;
@@ -342,7 +335,7 @@ footer{
   transform: translateY(-1px);
 }
 
-/* ✅ Solution B : cacher navbar pendant modal */
+/* ✅ Cacher navbar pendant la modal */
 body.modal-open .site-navbar{
   visibility: hidden;
   pointer-events: none;
@@ -352,13 +345,13 @@ body.modal-open .site-navbar{
  CHALET PAGE — WRAP + MENU SECTIONS + SECTIONS
 ================================ */
 
-/* ✅ Wrapper : centre carrousel + menu sur la même largeur */
+/* Wrapper : centre carrousel + menu sur la même largeur */
 .chalet-media-wrap{
   margin: 1rem auto 0;
   padding: 0 1.5rem;
 }
 
-/* ✅ Menu sections sous carousel — CENTRÉ et NON sticky */
+/* Menu sections sous carousel — CENTRÉ et NON sticky */
 .chalet-tabs{
   position: static;
   background: transparent;
@@ -398,22 +391,22 @@ body.modal-open .site-navbar{
   background: rgba(122,75,53,0.10);
 }
 
-/* ✅ Sections : plus aérées et cohérentes */
+/* Sections : scroll anchor sous navbar sticky */
 .chalet-section{
   max-width: 1200px;
   padding: 0 1.5rem;
   scroll-margin-top: 90px;
 }
 
-/* ✅ ESPACE ENTRE SECTIONS (Description / Équipements / Emplacement) */
+/* ✅ Espacement entre sections */
 .chalet-section{
-  margin: 3.4rem auto; /* augmenté */
+  margin: 3.4rem auto;
 }
 .chalet-section:first-of-type{
   margin-top: 2.6rem;
 }
 .chalet-section + .chalet-section{
-  margin-top: 3.8rem; /* encore plus d’air entre sections */
+  margin-top: 3.8rem;
 }
 
 .chalet-h3{
@@ -429,13 +422,103 @@ body.modal-open .site-navbar{
   line-height: 1.7;
 }
 
-/* Aération du texte */
+/* Texte global un peu plus lisible */
 .chalet-section p{
   margin: 0 0 1rem;
   line-height: 1.7;
 }
 
-/* Meta ligne */
+/* ============================
+ DESCRIPTION — "En un coup d’œil"
+============================ */
+.chalet-glance{
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6rem;
+  margin: .9rem 0 1.1rem;
+}
+
+.glance-col{
+  flex: 1 1 0;
+  min-width: 260px;
+}
+
+.glance-title{
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: .78rem;
+  color: rgba(58,42,31,0.70);
+  margin-bottom: .45rem;
+}
+
+.glance-items{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem 1.15rem;
+}
+
+.glance-item{
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  font-weight: 650;
+  font-size: .96rem;
+  opacity: .95;
+}
+
+/* séparateur vertical (desktop) */
+.glance-divider{
+  width: 1px;
+  align-self: stretch;
+  background: linear-gradient(
+    to bottom,
+    rgba(122,75,53,0.0),
+    rgba(122,75,53,0.35),
+    rgba(122,75,53,0.0)
+  );
+}
+
+/* délimiteur avant le texte */
+.glance-rule{
+  height: 1px;
+  margin: 1.1rem 0 1.35rem;
+  background: linear-gradient(
+    to right,
+    rgba(122,75,53,0.0),
+    rgba(122,75,53,0.35),
+    rgba(122,75,53,0.0)
+  );
+}
+
+/* texte description plus aéré */
+.desc-text p{
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+/* mobile : stack + séparateur horizontal */
+@media (max-width: 768px){
+  .chalet-glance{
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .glance-divider{
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      rgba(122,75,53,0.0),
+      rgba(122,75,53,0.35),
+      rgba(122,75,53,0.0)
+    );
+  }
+}
+
+/* ================================
+ (Optionnel) Styles existants (si tu les utilises encore)
+ Meta / Chips / Callout
+================================ */
 .chalet-meta{
   display: flex;
   flex-wrap: wrap;
@@ -452,7 +535,6 @@ body.modal-open .site-navbar{
   font-size: .95rem;
 }
 
-/* Callout */
 .chalet-callout{
   background: rgba(255,255,255,0.65);
   border: 1px solid rgba(122,75,53,0.25);
@@ -462,7 +544,6 @@ body.modal-open .site-navbar{
   margin-top: 1.15rem;
 }
 
-/* Chips */
 .chalet-chips{
   display: flex;
   flex-wrap: wrap;
@@ -482,50 +563,7 @@ body.modal-open .site-navbar{
 }
 
 /* ================================
- DESCRIPTION — version light (sans fond / sans contours)
-================================ */
-#description .chalet-meta{
-  gap: .45rem 1.2rem;
-  margin: .9rem 0 1.35rem;
-}
-
-#description .chalet-meta__item{
-  background: transparent;
-  border: 0;
-  padding: 0;
-  border-radius: 0;
-  font-weight: 600;
-  font-size: .95rem;
-  opacity: .95;
-}
-
-#description .chalet-callout{
-  background: transparent;
-  border: 0;
-  border-left: 0;
-  padding: 0;
-  border-radius: 0;
-  margin-top: 1.15rem;
-  opacity: .95;
-}
-
-#description .chalet-chips{
-  gap: .55rem 1.2rem;
-  margin-top: 1.25rem;
-}
-
-#description .chip{
-  background: transparent;
-  border: 0;
-  padding: 0;
-  border-radius: 0;
-  font-weight: 600;
-  font-size: .95rem;
-  opacity: .95;
-}
-
-/* ================================
- Équipements : plus d’air
+ Équipements
 ================================ */
 .equip-grid{
   display: grid;
