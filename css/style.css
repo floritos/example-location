@@ -1,231 +1,231 @@
 
 /* ================================
-   RESET & BASE
+ RESET & BASE
 ================================ */
 *{
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Windows + Chrome : largeur stable (scrollbar toujours présente) */
 html{
-   overflow-y: scroll;
-   overflow-x: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 body{
-   margin: 0;
-   min-height: 100vh;
-   font-family: "Segoe UI", sans-serif;
-   background-color: #f7f3ef;
-   color: #3a2a1f;
-   display: flex;
-   flex-direction: column;
-   overflow-x: visible;
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f7f3ef;
+  color: #3a2a1f;
+  display: flex;
+  flex-direction: column;
+  overflow-x: visible;
 }
 
 main{
-   flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 /* ================================
-   NAVBAR
+ NAVBAR
 ================================ */
-
 .site-navbar{
-   background: linear-gradient(to right, #2b1e16, #3b2a20);
-   padding: 1rem 2rem;
-   position: sticky;
-   top: 0;
-   z-index: 2000;
-
+  background: linear-gradient(to right, #2b1e16, #3b2a20);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
 }
 
 .nav-container{
-   max-width: 1200px;
-   margin: auto;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo{
-   color: white;
-   font-weight: 600;
-   font-size: 1.1rem;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 .nav-links{
-   list-style: none;
-   display: flex;
-   gap: 1.5rem;
-   margin: 0;
-   padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a{
-   color: white;
-   text-decoration: none;
-   font-weight: 500;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 .nav-links a:hover{
-   text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* ================================
-   HERO
+ HERO
 ================================ */
 .hero{
-   height: 70vh;
-   background: url("../img/Designer.png") center/cover no-repeat;
-   position: relative;
+  height: 70vh;
+  background: url("../img/Designer.png") center/cover no-repeat;
+  position: relative;
 }
 
 .overlay{
-   background: rgba(0,0,0,0.55);
-   color: white;
-   height: 100%;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   text-align: center;
-   padding: 2rem;
+  background: rgba(0,0,0,0.55);
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
 }
 
 .overlay h1{
-   font-size: 2.4rem;
-   margin-bottom: 1rem;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
 }
 
 .overlay p{
-   font-size: 1.1rem;
-   margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
 }
 
 .btn-primary{
-   background: #7a4b35;
-   color: white;
-   padding: 0.8rem 2rem;
-   border-radius: 30px;
-   text-decoration: none;
+  background: #7a4b35;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
 }
 
 .btn-primary:hover{
-   background: #9a6245;
+  background: #9a6245;
 }
 
 /* ================================
-   SECTIONS
+ SECTIONS
 ================================ */
 .section{
-   max-width: 1200px;
-   margin: 4rem auto;
-   padding: 0 1.5rem;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
 }
 
 .section h2{
-   text-align: center;
-   margin-bottom: 2rem;
-   color: #6b3e26;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #6b3e26;
 }
 
 /* ================================
-   LOGEMENTS - CARDS
+ LOGEMENTS - CARDS
 ================================ */
 .cards{
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 
 .card{
-   background: #fffaf5;
-   border-radius: 20px;
-   overflow: hidden;
-   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-   transition: transform 0.3s;
+  background: #fffaf5;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
 }
 
 .card:hover{
-   transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .card img{
-   width: 100%;
-   height: 260px;
-   object-fit: cover;
-   display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
 }
 
 .card-content{
-   padding: 1.5rem;
-   text-align: center;
+  padding: 1.5rem;
+  text-align: center;
 }
 
 .card-content h3{
-   margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .card-content p{
-   font-size: 0.95rem;
+  font-size: 0.95rem;
 }
 
 .btn{
-   display: inline-block;
-   margin-top: 1rem;
-   padding: 0.6rem 1.6rem;
-   background: #5a3a2b;
-   color: white;
-   border-radius: 30px;
-   text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.6rem;
+  background: #5a3a2b;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
 }
 
 .btn:hover{
-   background: #7a4b35;
+  background: #7a4b35;
 }
 
 /* ================================
-   FOOTER
+ FOOTER
 ================================ */
 footer{
-   background: linear-gradient(to right, #2b1e16, #3b2a20);
-   color: white;
-   text-align: center;
-   padding: 1.2rem;
-   margin-top: auto;
+  background: linear-gradient(to right, #2b1e16, #3b2a20);
+  color: white;
+  text-align: center;
+  padding: 1.2rem;
+  margin-top: auto;
 }
 
 /* ================================
-   RESPONSIVE
+ RESPONSIVE
 ================================ */
 @media (max-width: 900px){
-   .cards{ grid-template-columns: 1fr; }
+  .cards{ grid-template-columns: 1fr; }
 }
 
 /* ✅ Mobile */
 @media (max-width: 768px){
-   .nav-container{
+  .nav-container{
     flex-direction: column;
     gap: 1rem;
-   }
-   .hero{ height: 60vh; }
-   .overlay h1{ font-size: 1.9rem; }
-   .back-under-nav{
-      padding: .3rem 1rem 0;
-   }
-   .back-under-nav a{
-      font-size: .85rem;
-      padding: .25rem .65rem;
-   }
+  }
+
+  .hero{ height: 60vh; }
+  .overlay h1{ font-size: 1.9rem; }
+
+  .back-under-nav{
+    padding: .3rem 1rem 0;
+  }
+
+  .back-under-nav a{
+    font-size: .85rem;
+    padding: .25rem .65rem;
+  }
 }
 
 /* ================================
-   BOUTON RETOUR (tout dans .back-under-nav)
-   ================================= */
-
+ BOUTON RETOUR (tout dans .back-under-nav)
+================================ */
 /* Bande discrète sous la navbar */
 .back-under-nav{
   max-width: 1200px;
@@ -238,16 +238,12 @@ footer{
   display: inline-flex;
   align-items: center;
   gap: .35rem;
-
   padding: .28rem .75rem;
   border: 1px solid rgba(58,42,31,0.35);
   border-radius: 999px;
-
   text-decoration: none;
   font-size: .9rem;
-
   background: rgba(255,255,255,0.55);
-
   /* ✅ empêche le bleu/violet navigateur */
   color: #3a2a1f;
 }
@@ -263,9 +259,8 @@ footer{
 }
 
 /* ================================
-   GALLERY CAROUSEL
-   ================================= */
-
+ GALLERY CAROUSEL
+================================ */
 /* ===== Galerie cliquable (sur la page) ===== */
 .gallery-carousel .gallery-open { display:block; }
 
@@ -348,36 +343,44 @@ footer{
   transform: translateY(-1px);
 }
 
+/* ✅ Solution B : cacher navbar pendant modal */
 body.modal-open .site-navbar{
   visibility: hidden;
   pointer-events: none;
 }
 
+/* ================================
+ CHALET PAGE — WRAP + MENU SECTIONS + SECTIONS
+================================ */
 
-/* ===== Menu sections sous carousel ===== */
+/* ✅ Wrapper : centre carrousel + menu sur la même largeur */
+.chalet-media-wrap{
+  margin: 1rem auto 0;
+  padding: 0 1.5rem; /* air sur mobile */
+}
+
+/* ✅ Menu sections sous carousel — CENTRÉ et NON sticky */
 .chalet-tabs{
-  position: sticky;
-  top: 64px; /* ajuste si ta navbar est plus haute */
-  z-index: 50;
-  background: rgba(247,243,239,0.92);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(58,42,31,0.10);
+  position: static; /* <- ne suit plus le scroll */
+  background: transparent;
+  border-bottom: 1px solid rgba(58,42,31,0.12);
+  margin-top: .75rem;
+  padding-bottom: .75rem;
 }
 
 .chalet-tabs__inner{
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: .6rem 1.5rem;
   display: flex;
-  gap: .75rem;
+  justify-content: center; /* <- centre le menu */
   align-items: center;
-  overflow-x: auto;
+  gap: .75rem;
+  flex-wrap: wrap;
 }
 
+/* Onglets */
 .chalet-tab{
   display: inline-flex;
   align-items: center;
-  padding: .45rem .9rem;
+  padding: .5rem 1.05rem;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
@@ -389,6 +392,7 @@ body.modal-open .site-navbar{
 
 .chalet-tab:hover{
   background: rgba(58,42,31,0.06);
+  border-color: rgba(122,75,53,0.35);
 }
 
 .chalet-tab.is-active{
@@ -396,38 +400,46 @@ body.modal-open .site-navbar{
   background: rgba(122,75,53,0.10);
 }
 
-/* ===== Sections ===== */
+/* ✅ Sections : plus aérées et cohérentes */
 .chalet-section{
   max-width: 1200px;
-  margin: 2rem auto;
+  margin: 2.25rem auto;
   padding: 0 1.5rem;
-  scroll-margin-top: 130px; /* évite que le sticky recouvre le titre quand on clique */
+  scroll-margin-top: 90px; /* compense la navbar sticky */
 }
 
 .chalet-h3{
   color: #6b3e26;
-  margin: 1.25rem 0 .75rem;
+  margin: 1.25rem 0 1rem;
   text-align: left;
 }
 
 .chalet-lead{
   font-size: 1.05rem;
   opacity: .95;
+  margin: .75rem 0 1.1rem;
+  line-height: 1.7;
+}
+
+/* Aération du texte */
+.chalet-section p{
+  margin: 0 0 1rem;
+  line-height: 1.7;
 }
 
 /* Meta ligne */
 .chalet-meta{
   display: flex;
   flex-wrap: wrap;
-  gap: .6rem 1rem;
-  margin: .5rem 0 1rem;
+  gap: .65rem 1.1rem;
+  margin: .75rem 0 1.25rem;
 }
 
 .chalet-meta__item{
   background: rgba(255,255,255,0.6);
   border: 1px solid rgba(58,42,31,0.12);
   border-radius: 999px;
-  padding: .35rem .7rem;
+  padding: .4rem .8rem;
   font-weight: 600;
   font-size: .95rem;
 }
@@ -437,17 +449,19 @@ body.modal-open .site-navbar{
   background: rgba(255,255,255,0.65);
   border: 1px solid rgba(122,75,53,0.25);
   border-left: 4px solid #7a4b35;
-  padding: .9rem 1rem;
+  padding: 1rem 1.1rem;
   border-radius: .75rem;
+  margin-top: 1.15rem;
 }
 
 /* Chips */
 .chalet-chips{
   display: flex;
   flex-wrap: wrap;
-  gap: .5rem;
-  margin-top: 1rem;
+  gap: .6rem;
+  margin-top: 1.1rem;
 }
+
 .chip{
   display: inline-flex;
   align-items: center;
@@ -459,12 +473,14 @@ body.modal-open .site-navbar{
   font-size: .92rem;
 }
 
-/* Equip grid */
+/* Équipements : plus d’air */
 .equip-grid{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 1.25rem;
+  margin-top: 1rem;
 }
+
 @media (max-width: 900px){
   .equip-grid{ grid-template-columns: 1fr; }
 }
@@ -473,19 +489,28 @@ body.modal-open .site-navbar{
   background: #fffaf5;
   border: 1px solid rgba(58,42,31,0.12);
   border-radius: 16px;
-  padding: 1rem 1.1rem;
+  padding: 1.15rem 1.25rem;
   box-shadow: 0 10px 25px rgba(0,0,0,0.06);
 }
 
 .equip-title{
   font-weight: 700;
-  margin-bottom: .6rem;
+  margin-bottom: .65rem;
   color: #3a2a1f;
 }
 
 .equip-list{
   margin: 0;
   padding-left: 1.1rem;
+}
+
+.equip-list li{
+  margin-bottom: .45rem;
+  line-height: 1.65;
+}
+
+.equip-list li:last-child{
+  margin-bottom: 0;
 }
 
 /* Map */
@@ -496,6 +521,7 @@ body.modal-open .site-navbar{
   box-shadow: 0 10px 25px rgba(0,0,0,0.06);
   background: #fff;
 }
+
 .map-wrap iframe{
   width: 100%;
   height: 360px;
@@ -510,15 +536,10 @@ body.modal-open .site-navbar{
   border-radius: 16px;
   padding: 1rem 1.1rem;
 }
+
 .location-title{
   font-weight: 800;
   margin-bottom: .35rem;
 }
+
 .muted{ opacity: .8; }
-
-
-
-
-
-
-
