@@ -35,7 +35,7 @@ main{
 .site-navbar{
   background: linear-gradient(to right, #2b1e16, #3b2a20);
   padding: 1rem 2rem;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 2000;
 }
