@@ -349,6 +349,6 @@ footer{
 }
 
 body.modal-open .navbar {
-  display: none;     /* ou display:none */
+  visibility: hidden;     /* ou display:none */
   pointer-events: none;
 }
