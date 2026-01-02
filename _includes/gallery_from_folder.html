@@ -1,0 +1,183 @@
+{%- comment -%}
+Include: gallery_from_folder.html
+
+Paramètres:
+- folder (obligatoire): dossier des images, ex: "/img/chalet"
+- id (optionnel): identifiant unique, ex: "chalet"
+- title (optionnel): titre affiché dans la lightbox
+- thumbs_folder (optionnel): dossier des miniatures, ex: "/img/chalet/thumbs"
+- max_width (optionnel): largeur max du carousel, ex: "900px"
+
+Usage:
+{% include gallery_from_folder.html folder="/img/chalet" id="chalet" title="Espace de vie du chalet" thumbs_folder="/img/chalet/thumbs" %}
+{%- endcomment -%}
+
+{%- assign folder = include.folder -%}
+{%- assign gid = include.id | default: folder | slugify -%}
+{%- assign title = include.title | default: page.title -%}
+{%- assign thumbs_folder = include.thumbs_folder | default: folder -%}
+{%- assign maxw = include.max_width | default: "900px" -%}
+
+{%- assign imgs = site.static_files
+  | where_exp: "f", "f.path contains folder"
+  | where_exp: "f", "f.extname == '.jpg' or f.extname == '.jpeg' or f.extname == '.png' or f.extname == '.webp'"
+  | where_exp: "f", "f.path contains '/thumbs/' == false"
+  | sort: "name"
+-%}
+
+{%- if imgs and imgs.size > 0 -%}
+
+<!-- ====== Carousel "page" (cliquable) ====== -->
+<div id="carousel-{{ gid }}"
+     class="carousel slide carousel-fade gallery-carousel"
+     data-bs-interval="false"
+     data-bs-touch="true"
+     data-bs-keyboard="true"
+     style="max-width: {{ maxw }};">
+
+  <div class="carousel-indicators">
+    {%- for f in imgs -%}
+      <button type="button"
+              data-bs-target="#carousel-{{ gid }}"
+              data-bs-slide-to="{{ forloop.index0 }}"
+              class="{% if forloop.first %}active{% endif %}"
+              {% if forloop.first %}aria-current="true"{% endif %}
+              aria-label="Slide {{ forloop.index }}"></button>
+    {%- endfor -%}
+  </div>
+
+  <div class="carousel-inner rounded-4 overflow-hidden shadow">
+    {%- for f in imgs -%}
+      <div class="carousel-item {% if forloop.first %}active{% endif %}">
+        <a href="#"
+           class="gallery-open"
+           data-gid="{{ gid }}"
+           data-index="{{ forloop.index0 }}"
+           aria-label="Ouvrir la galerie">
+          <img src="{{ f.path | relative_url }}"
+               class="d-block w-100 carousel-img"
+               alt="{{ title }} – Photo {{ forloop.index }}">
+        </a>
+      </div>
+    {%- endfor -%}
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ gid }}" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Précédent</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{ gid }}" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Suivant</span>
+  </button>
+</div>
+
+<!-- ====== Modal "lightbox" plein écran + miniatures ====== -->
+<div class="modal fade gallery-modal" id="galleryModal-{{ gid }}" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header gallery-modal__header">
+        <div class="gallery-modal__title">{{ title }}</div>
+        <div class="gallery-modal__count"><span id="gcur-{{gid}}">1</span>/{{ imgs.size }}</div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+      </div>
+
+      <div class="modal-body gallery-modal__body">
+        <div id="modalCarousel-{{ gid }}" class="carousel slide" data-bs-interval="false">
+          <div class="carousel-inner">
+            {%- for f in imgs -%}
+              <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <img src="{{ f.path | relative_url }}"
+                     class="gallery-modal__img"
+                     alt="{{ title }} – Photo {{ forloop.index }}">
+              </div>
+            {%- endfor -%}
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#modalCarousel-{{ gid }}" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Précédent</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#modalCarousel-{{ gid }}" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Suivant</span>
+          </button>
+        </div>
+
+        <div class="gallery-thumbs" id="thumbs-{{ gid }}">
+          {%- for f in imgs -%}
+            {%- assign thumb_path = thumbs_folder | append: "/" | append: f.name -%}
+            {%- assign thumb_src = thumb_path -%}
+            {%- if thumbs_folder == folder -%}
+              {%- assign thumb_src = f.path -%}
+            {%- endif -%}
+
+            <button type="button"
+                    class="gallery-thumb {% if forloop.first %}is-active{% endif %}"
+                    data-bs-target="#modalCarousel-{{ gid }}"
+                    data-bs-slide-to="{{ forloop.index0 }}"
+                    aria-label="Miniature {{ forloop.index }}">
+              <img src="{{ thumb_src | relative_url }}" alt="">
+            </button>
+          {%- endfor -%}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const gid = "{{ gid }}";
+  const modalEl = document.getElementById("galleryModal-" + gid);
+  const modalCarouselEl = document.getElementById("modalCarousel-" + gid);
+  const counterEl = document.getElementById("gcur-" + gid);
+  const thumbsWrap = document.getElementById("thumbs-" + gid);
+
+  if (!modalEl || !modalCarouselEl || !thumbsWrap) return;
+
+  const modal = new bootstrap.Modal(modalEl);
+  const modalCarousel = bootstrap.Carousel.getOrCreateInstance(modalCarouselEl, { interval: false, ride: false });
+
+  function updateUI(activeIndex){
+    if (counterEl) counterEl.textContent = String(activeIndex + 1);
+    thumbsWrap.querySelectorAll(".gallery-thumb").forEach((btn, i) => {
+      btn.classList.toggle("is-active", i === activeIndex);
+    });
+    const activeThumb = thumbsWrap.querySelector(".gallery-thumb.is-active");
+    if (activeThumb) activeThumb.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+  }
+
+  document.querySelectorAll('.gallery-open[data-gid="' + gid + '"]').forEach(a => {
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      const idx = parseInt(a.getAttribute("data-index") || "0", 10);
+      modal.show();
+      modalEl.addEventListener("shown.bs.modal", function onShown() {
+        modalCarousel.to(idx);
+        updateUI(idx);
+        modalEl.removeEventListener("shown.bs.modal", onShown);
+      });
+    });
+  });
+
+  modalCarouselEl.addEventListener("slid.bs.carousel", () => {
+    const items = Array.from(modalCarouselEl.querySelectorAll(".carousel-item"));
+    const active = modalCarouselEl.querySelector(".carousel-item.active");
+    const idx = items.indexOf(active);
+    if (idx >= 0) updateUI(idx);
+  });
+
+  thumbsWrap.querySelectorAll(".gallery-thumb").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const idx = parseInt(btn.getAttribute("data-bs-slide-to") || "0", 10);
+      updateUI(idx);
+    });
+  });
+})();
+</script>
+
+{%- else -%}
+<!-- Aucun fichier image trouvé dans {{ folder }} -->
+{%- endif -%}
