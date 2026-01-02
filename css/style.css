@@ -241,10 +241,10 @@ footer{
    .back-under-nav{
       padding: .3rem 1rem 0;
    }
-   .back-to-list{
+   .back-under-nav a{
       font-size: .85rem;
       padding: .25rem .65rem;
-  }
+   }
 }
 
 /* ✅ Très petit mobile */
@@ -308,6 +308,10 @@ footer{
 }
 
 
+/* ================================
+   BOUTON RETOUR (tout dans .back-under-nav)
+   ================================= */
+
 /* Bande discrète sous la navbar */
 .back-under-nav{
   max-width: 1200px;
@@ -315,18 +319,31 @@ footer{
   padding: .35rem 1.5rem 0; /* discret, proche de la navbar */
 }
 
-/* Le lien "bouton" garde ton style .back-to-list, on complète juste */
-.back-to-list{
+/* Le lien devient le "bouton" */
+.back-under-nav a{
   display: inline-flex;
   align-items: center;
   gap: .35rem;
 
   padding: .28rem .75rem;
-  border: 1px solid rgba(58,42,31,0.35); /* cohérent avec ton style existant */
+  border: 1px solid rgba(58,42,31,0.35);
   border-radius: 999px;
 
   text-decoration: none;
   font-size: .9rem;
+
   background: rgba(255,255,255,0.55);
+
+  /* ✅ empêche le bleu/violet navigateur */
+  color: #3a2a1f;
 }
 
+/* ✅ empêche le violet des liens visités */
+.back-under-nav a:visited{
+  color: #3a2a1f;
+}
+
+/* Hover discret */
+.back-under-nav a:hover{
+  background: rgba(58,42,31,0.06);
+}
