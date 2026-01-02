@@ -238,6 +238,13 @@ footer{
 /* ✅ Mobile */
 @media (max-width: 768px){
    .carousel .carousel-inner{ height: 320px; }
+   .back-under-nav{
+      padding: .3rem 1rem 0;
+   }
+   .back-to-list{
+      font-size: .85rem;
+      padding: .25rem .65rem;
+  }
 }
 
 /* ✅ Très petit mobile */
@@ -300,11 +307,26 @@ footer{
    pointer-events: auto;
 }
 
-.back-to-list{
-   border-color: rgba(58,42,31,0.35);
-   color: #3a2a1f;
+
+/* Bande discrète sous la navbar */
+.back-under-nav{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: .35rem 1.5rem 0; /* discret, proche de la navbar */
 }
-.back-to-list:hover{
-   background: rgba(58,42,31,0.06);
+
+/* Le lien "bouton" garde ton style .back-to-list, on complète juste */
+.back-to-list{
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+
+  padding: .28rem .75rem;
+  border: 1px solid rgba(58,42,31,0.35); /* cohérent avec ton style existant */
+  border-radius: 999px;
+
+  text-decoration: none;
+  font-size: .9rem;
+  background: rgba(255,255,255,0.55);
 }
 
