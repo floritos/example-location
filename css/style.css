@@ -347,3 +347,8 @@ footer{
   border-color: #7a4b35; /* accent du site */
   transform: translateY(-1px);
 }
+
+body.modal-open .navbar {
+  visibility: hidden;     /* ou display:none */
+  pointer-events: none;
+}
