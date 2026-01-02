@@ -5,38 +5,41 @@ title: Chalet cocooning – Gérardmer
 
 {% include back_under_nav.html %}
 
-<h2>Chalet cocooning</h2>
 
-<p class="text-center mb-4"><strong>Chalet Gérardmer</strong></p>
-
-{% include gallery_from_folder.html folder="/img/chalet" title="Espace de vie du chalet" max_width="900px" %}
-
-<h3 class="mt-5">Informations</h3>
-<ul class="mt-3">
-  <li>👥 Jusqu’à 6 personnes</li>
-  <li>🛏️ 3 chambres</li>
-  <li>🛁 1 salle de bain</li>
-  <li>🔥 Poêle à bois</li>
-  <li>🌲 Terrasse avec vue forêt</li>
-  <li>🚗 Parking privé</li>
-</ul>
-
-<p class="mt-3">
-  Chalet chaleureux et entièrement équipé, idéal pour un séjour cocooning au cœur des Vosges,
-  été comme hiver.
-</p>
-
-<h3 class="mt-5">Disponibilités</h3>
-
-<div class="row g-3 mt-2" style="max-width: 520px;">
-  <div class="col-12 col-md-6">
-    <label for="arrivee-chalet" class="form-label">Arrivée :</label>
-    <input id="arrivee-chalet" type="date" class="form-control">
+<main class="section">
+  <h2>Chalet cocooning</h2>
+  
+  <p class="text-center mb-4"><strong>Chalet Gérardmer</strong></p>
+  
+  {% include gallery_from_folder.html folder="/img/chalet" title="Espace de vie du chalet" max_width="900px" %}
+  
+  <h3 class="mt-5">Informations</h3>
+  <ul class="mt-3">
+    <li>👥 Jusqu’à 6 personnes</li>
+    <li>🛏️ 3 chambres</li>
+    <li>🛁 1 salle de bain</li>
+    <li>🔥 Poêle à bois</li>
+    <li>🌲 Terrasse avec vue forêt</li>
+    <li>🚗 Parking privé</li>
+  </ul>
+  
+  <p class="mt-3">
+    Chalet chaleureux et entièrement équipé, idéal pour un séjour cocooning au cœur des Vosges,
+    été comme hiver.
+  </p>
+  
+  <h3 class="mt-5">Disponibilités</h3>
+  
+  <div class="row g-3 mt-2" style="max-width: 520px;">
+    <div class="col-12 col-md-6">
+      <label for="arrivee-chalet" class="form-label">Arrivée :</label>
+      <input id="arrivee-chalet" type="date" class="form-control">
+    </div>
+    <div class="col-12 col-md-6">
+      <label for="depart-chalet" class="form-label">Départ :</label>
+      <input id="depart-chalet" type="date" class="form-control">
+    </div>
   </div>
-  <div class="col-12 col-md-6">
-    <label for="depart-chalet" class="form-label">Départ :</label>
-    <input id="depart-chalet" type="date" class="form-control">
-  </div>
-</div>
-
-<a href="#" class="btn mt-3">Réserver</a>
+  
+  <a href="#" class="btn mt-3">Réserver</a>
+</main> 
