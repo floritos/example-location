@@ -116,7 +116,7 @@ main{
 }
 
 /* ================================
- SECTIONS
+ SECTIONS (générique)
 ================================ */
 .section{
   max-width: 1200px;
@@ -230,7 +230,7 @@ footer{
 .back-under-nav{
   max-width: 1200px;
   margin: 0 auto;
-  padding: .35rem 1.5rem 0; /* discret, proche de la navbar */
+  padding: .35rem 1.5rem 0;
 }
 
 /* Le lien devient le "bouton" */
@@ -244,7 +244,6 @@ footer{
   text-decoration: none;
   font-size: .9rem;
   background: rgba(255,255,255,0.55);
-  /* ✅ empêche le bleu/violet navigateur */
   color: #3a2a1f;
 }
 
@@ -339,7 +338,7 @@ footer{
 
 .gallery-thumb.is-active{
   opacity: 1;
-  border-color: #7a4b35; /* accent du site */
+  border-color: #7a4b35;
   transform: translateY(-1px);
 }
 
@@ -356,12 +355,12 @@ body.modal-open .site-navbar{
 /* ✅ Wrapper : centre carrousel + menu sur la même largeur */
 .chalet-media-wrap{
   margin: 1rem auto 0;
-  padding: 0 1.5rem; /* air sur mobile */
+  padding: 0 1.5rem;
 }
 
 /* ✅ Menu sections sous carousel — CENTRÉ et NON sticky */
 .chalet-tabs{
-  position: static; /* <- ne suit plus le scroll */
+  position: static;
   background: transparent;
   border-bottom: 1px solid rgba(58,42,31,0.12);
   margin-top: .75rem;
@@ -370,13 +369,12 @@ body.modal-open .site-navbar{
 
 .chalet-tabs__inner{
   display: flex;
-  justify-content: center; /* <- centre le menu */
+  justify-content: center;
   align-items: center;
   gap: .75rem;
   flex-wrap: wrap;
 }
 
-/* Onglets */
 .chalet-tab{
   display: inline-flex;
   align-items: center;
@@ -403,9 +401,19 @@ body.modal-open .site-navbar{
 /* ✅ Sections : plus aérées et cohérentes */
 .chalet-section{
   max-width: 1200px;
-  margin: 2.25rem auto;
   padding: 0 1.5rem;
-  scroll-margin-top: 90px; /* compense la navbar sticky */
+  scroll-margin-top: 90px;
+}
+
+/* ✅ ESPACE ENTRE SECTIONS (Description / Équipements / Emplacement) */
+.chalet-section{
+  margin: 3.4rem auto; /* augmenté */
+}
+.chalet-section:first-of-type{
+  margin-top: 2.6rem;
+}
+.chalet-section + .chalet-section{
+  margin-top: 3.8rem; /* encore plus d’air entre sections */
 }
 
 .chalet-h3{
@@ -473,7 +481,52 @@ body.modal-open .site-navbar{
   font-size: .92rem;
 }
 
-/* Équipements : plus d’air */
+/* ================================
+ DESCRIPTION — version light (sans fond / sans contours)
+================================ */
+#description .chalet-meta{
+  gap: .45rem 1.2rem;
+  margin: .9rem 0 1.35rem;
+}
+
+#description .chalet-meta__item{
+  background: transparent;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  font-weight: 600;
+  font-size: .95rem;
+  opacity: .95;
+}
+
+#description .chalet-callout{
+  background: transparent;
+  border: 0;
+  border-left: 0;
+  padding: 0;
+  border-radius: 0;
+  margin-top: 1.15rem;
+  opacity: .95;
+}
+
+#description .chalet-chips{
+  gap: .55rem 1.2rem;
+  margin-top: 1.25rem;
+}
+
+#description .chip{
+  background: transparent;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  font-weight: 600;
+  font-size: .95rem;
+  opacity: .95;
+}
+
+/* ================================
+ Équipements : plus d’air
+================================ */
 .equip-grid{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -513,7 +566,9 @@ body.modal-open .site-navbar{
   margin-bottom: 0;
 }
 
-/* Map */
+/* ================================
+ Map
+================================ */
 .map-wrap{
   border-radius: 18px;
   overflow: hidden;
