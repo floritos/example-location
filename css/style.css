@@ -299,3 +299,12 @@ footer{
    opacity: 1;
    pointer-events: auto;
 }
+
+.back-to-list{
+   border-color: rgba(58,42,31,0.35);
+   color: #3a2a1f;
+}
+.back-to-list:hover{
+   background: rgba(58,42,31,0.06);
+}
+
