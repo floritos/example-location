@@ -13,7 +13,7 @@ Usage:
 {%- endcomment -%}
 
 {%- assign folder = include.folder -%}
-{%- assign gid = include.id | default: folder | slugify -%}
+{%- assign gid = include.gid | default: folder | slugify -%}
 {%- assign title = include.title | default: page.title -%}
 {%- assign thumbs_folder = include.thumbs_folder | default: folder -%}
 {%- assign maxw = include.max_width | default: "900px" -%}
