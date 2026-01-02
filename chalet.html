@@ -9,19 +9,18 @@ title: Chalet cocooning – Gérardmer
 <main class="section">
   <h2>Chalet cocooning</h2>
   
-  <div class="d-flex justify-content-center">
-  {% include gallery_from_folder.html folder="/img/chalet" id="chalet" title="Espace de vie du chalet" max_width="900px" %}
+  <div class="chalet-media-wrap" style="max-width: 900px;">
+    {% include gallery_from_folder.html folder="/img/chalet" gid="chalet" title="Espace de vie du chalet" max_width="900px" %}
+  
+    <!-- Menu sections (centré comme le carousel, NON sticky) -->
+    <nav class="chalet-tabs" aria-label="Navigation des sections">
+      <div class="chalet-tabs__inner">
+        <a class="chalet-tab" href="#description">Description</a>
+        <a class="chalet-tab" href="#equipements">Équipements</a>
+        <a class="chalet-tab" href="#emplacement">Emplacement</a>
+      </div>
+    </nav>
   </div>
- 
-  <!-- ===== Menu sections (sous le carousel) ===== -->
-  <nav class="chalet-tabs" aria-label="Navigation des sections">
-    <div class="chalet-tabs__inner">
-      <a class="chalet-tab is-active" href="#description">Description</a>
-      <a class="chalet-tab" href="#equipements">Équipements</a>
-      <a class="chalet-tab" href="#emplacement">Emplacement</a>
-    </div>
-  </nav>
-
 
 <section id="description" class="chalet-section">
   <h3 class="chalet-h3">Description</h3>
@@ -114,12 +113,6 @@ title: Chalet cocooning – Gérardmer
         <li>Parking privé</li>
       </ul>
     </div>
-  </div>
-
-  <div class="chalet-chips mt-3">
-    <span class="chip">✅ Idéal en hiver</span>
-    <span class="chip">✅ Séjour famille/amis</span>
-    <span class="chip">✅ Proche nature</span>
   </div>
 </section>
 
