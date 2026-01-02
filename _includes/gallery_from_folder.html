@@ -135,8 +135,14 @@ Usage:
   </div>
 </div>
 
+
 <script>
-(function () {
+window.addEventListener("load", function () {
+  if (typeof window.bootstrap === "undefined") {
+    console.error("Bootstrap JS n'est pas chargé (bootstrap is undefined).");
+    return;
+  }
+
   const gid = "{{ gid }}";
   const modalEl = document.getElementById("galleryModal-" + gid);
   const modalCarouselEl = document.getElementById("modalCarousel-" + gid);
@@ -183,8 +189,9 @@ Usage:
       updateUI(idx);
     });
   });
-})();
+});
 </script>
+
 
 {%- else -%}
 <!-- Aucun fichier image trouvé dans {{ folder }} -->
