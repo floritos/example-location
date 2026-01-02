@@ -348,7 +348,7 @@ footer{
   transform: translateY(-1px);
 }
 
-body.modal-open .navbar {
-  visibility: hidden;     /* ou display:none */
+body.modal-open .site-navbar{
+  visibility: hidden;
   pointer-events: none;
 }
