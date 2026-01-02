@@ -1,8 +1,8 @@
 {%- assign url   = include.url   | default: "/logements.html" -%}
 {%- assign label = include.label | default: "Tous les logements" -%}
 
-<div class="back-under-nav">
-  <div class="back-under-nav__inner">
-    <a class="back-to-list" href="{{ url | relative_url }}">← {{ label }}</a>
+<div class="back-under-nav">  
+  <div class="back-under-nav">
+    <a href="{{ '/logements.html' | relative_url }}">← Tous les logements</a>
   </div>
 </div>
